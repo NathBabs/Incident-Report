@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <!-- Materialize CSS
+    <link href="css/materialize.css" rel="stylesheet">  -->
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        div.container > #excerpt > #posts {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+  
+        #posts {
+      padding: 10px;
+        }
+      </style>
+</head>
+
+<body>
+
+    <!-- Start your project here-->
+    <!-- 
+        GET CONTENT FROM YOUR WORDPRESS SITE
+    -->
+    <div class="container">
+        <h1>Posts</h1>
+         <div id="excerpt"></div>
+    </div>       
+
+    <!-- 
+        POST CONTENT TO YOUR WORDPRESS SITE
+    -->
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                     
+
+                
+                
+                    <!-- Default input name -->
+                <label for="defaultFormNameModalEx">Title</label>
+                <input type="text" name="title" id="title" class="form-control form-control-sm">
+                <br> <br>
+
+                    <label>Status</label>
+                        <select name="status" id="status" class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="publish">Publish</option>
+                            <option value="draft">Draft</option>
+                    </select> <br> <br>
+
+                    <!-- Default textarea message -->
+                <label for="content">Your message</label>
+                <textarea name="content" type="text" id="content" class="md-textarea form-control"></textarea>
+    
+                </div>
+                
+                <div class="modal-footer d-flex justify-content-center">
+                    <input id="submit" type="submit" name="submit" value="submit" class="btn btn-default"> 
+                    <!-- #endregion <button class="btn btn-default">POST</button>  -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center">
+        <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">NEW POST</a>
+    </div>
+
+
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Materialize Javascript -->
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <!-- #endregion -->
+    <script type="text/javascript" src="js/compiled.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Incident Report Solution</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Snackbar CSS -->
+    <link href="css/snackbar.css" rel="stylesheet">
+    <!-- Gmaps Location Picker CSS -->
+    <link rel="stylesheet" type="text/css" href="css/jquery-gmaps-latlon-picker.css"/>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <!-- #region <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZuKLTljBQfWy-jlW9QPXmplEQXvAi-wU"
+    type="text/javascript"></script>-->
+    <script src="http://maps.googleapis.com/maps/api/js??key=AIzaSyCZuKLTljBQfWy-jlW9QPXmplEQXvAi-wU"></script>
+    <!-- #region <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+
+    <link rel="stylesheet" type="text/css" href="css/jquery-gmaps-latlon-picker.css"/>
+    <script src="js/jquery-gmaps-latlon-picker.js"></script>
+   
+    <style>
+        div.container-fluid > #excerpt > #posts {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+  
+        #posts {
+      padding: 10px;
+        }
+
+        #mybutton {
+            position: fixed;
+            top: -0px;
+            right: 10px;
+        }
+
+        p > iframe {
+            margin: 0 auto !important;
+            display: block !important;
+            border: 0 !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            height: 300px !important;
+            width: 900px !important;
+        }
+
+        div.gllpMap {
+            width: 450px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding-top: 5px;
+        }
+        
+
+
+      </style>
+</head>
+
+<body>
+
+    <div class="app">
+    <!--Jumbotron-->
+<div class="jumbotron text-center">
+
+        <!--Title
+        <h4 class="card-title font-bold pb-2"></h4>-->
+    
+        <!--Card image-->
+        <div class="view overlay my-4">
+            <img src="img/demonstration-2477988.jpg" class="img-fluid" alt="">
+            <a href="#">
+                <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+    
+        <h5 class="indigo-text font-bold mb-4">CITIZENS REPORTING</h5>
+    
+        <p class="card-text">Submit any incident ranging from Accident, Fighting, Rioting etc. Also view all Submitted Incidents.  
+        </p>
+    
+    
+    </div>
+    <!--Jumbotron-->
+
+    <!-- Start your project here-->
+    <!-- 
+        GET CONTENT FROM YOUR WORDPRESS SITE
+    -->
+    <div class="container-fluid">
+        <h1 style="text-align: center" class="h1-responsive display-1 deep-purple-text">Incidents</h1>
+         <div id="excerpt"></div>
+    </div>       
+
+    <!-- 
+        POST CONTENT TO YOUR WORDPRESS SITE
+    -->
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="padding-right: 0px; display: none !important;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">NEW POST</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                   
+
+                
+                
+                    <!-- Default input name -->
+                <label for="defaultFormNameModalEx">Report Title</label>
+                <input type="text" name="title" id="title" class="form-control form-control-sm">
+                <br>
+
+                 <!-- #region    <label>Status</label>
+                        <select name="status" id="status" class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="publish">Publish</option>
+                            <option value="draft">Draft</option>
+                    </select> <br> -->
+
+
+                    <!-- Default checkbox -->
+                    <!-- Select Category of Incident -->
+    <!-- Inline form with checkboxes -->
+    <form class="form-inline">
+
+        <!-- Accident checkbox -->
+        <div class="form-check mr-3">
+            <input class="form-check-input" type="checkbox" id="inlineFormCheckbox" value="2">
+            <label class="form-check-label" for="inlineFormCheckbox1">Accident</label>
+        </div>
+    
+        <!-- Fighting checkbox -->
+        <div class="form-check mr-3">
+            <input type="checkbox" class="form-check-input" id="inlineFormCheckbox"  value="3">
+            <label class="form-check-label" for="inlineFormCheckbox2">Fighting</label>
+        </div>
+    
+        <!-- Natural Disaster checkbox -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineFormCheckbox" value="4">
+            <label class="form-check-label" for="inlineFormCheckbox3">Natural Disaster &nbsp;</label>
+        </div> 
+
+        <!-- Rioting checkbox -->
+        <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="inlineFormCheckbox" value="5">
+                <label class="form-check-label" for="inlineFormCheckbox4">Rioting</label>
+            </div>
+    
+    </form> <br>
+    <!-- Inline form with checkboxes -->
+    <!-- Filled-in checkbox 
+    <div class="form-check">
+        <input class="form-check-input filled-in" type="checkbox" value="2" id="filledInCheckbox1">
+        <label class="form-check-label" for="filledInCheckbox1">
+            Filled-in checkbox
+        </label>
+    </div>
+-->
+
+<label class="form-check-label">Pick The Location of the Incident</label>
+
+<fieldset class="gllpLatlonPicker">
+    <div class="gllpMap">Google Maps</div> 
+    <br>
+	<input type="hidden"  class="gllpLatitude" id="Latitude"/>
+	<input type="hidden" class="gllpLongitude" id="Longitude" />
+    <input type="hidden" class="gllpZoom" value="3" id="Zoom"/>
+    <input type="text" class="gllpLocationName" size="42" />
+  </fieldset>
+
+
+
+                    <!-- Default textarea message -->
+                <label for="content">Your message</label>
+                <textarea name="content" type="text" id="content" class="md-textarea form-control" rows="6"></textarea>
+            
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button id="submit" type="submit" name="submit" class="btn btn-default">SUBMIT &nbsp; &nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                   <!-- <input id="submit" type="submit" name="submit" value="submit" class="btn btn-default"> 
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>-->
+                    <!-- #endregion <button class="btn btn-default">POST</button>  -->
+                </div>
+                
+            
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center" id="mybutton">
+        <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">NEW POST &nbsp; <i class="fa fa-comment" aria-hidden="true"></i></a>
+    </div>
+
+    
+    <!-- /Start your project here-->
+
+</div>
+
+    <!-- SCRIPTS -->
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Bootbox.js -->
+    <script type="text/javascript" src="js/bootbox.min.js"></script>
+    <!-- Snackbar Javascript-->
+    <script type="text/javascript" src="js/snackbar.js"></script>
+     <!-- Importing Google Maps 
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeaiK0Gt_0TiLqlziGRVyOLLXTRM2BKUU"
+     type="text/javascript"></script>&callback=initMap-->
+     <!--Importing Location Picker JS-->
+     <script type="text/javascript" src="js/jquery-gmaps-latlon-picker.js"></script>
+     
+     <script type="text/javascript" src="cordova.js"></script>
+     <script type="text/javascript" src="js/index.js"></script>
+    
+</body>
+
+</html>
